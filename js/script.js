@@ -91,25 +91,19 @@ const todoFilter = () => {
     console.log(filter)
 }
 
-// MEXER AQUI
 const filterInput = () => {
     if (searchInput) {
         let elementList = document.querySelectorAll('h3')
-
-        elementList.forEach((element, i) => {
-
+        elementList.forEach((element) => {
             elementList = element.innerText.toLowerCase()
-
-            console.log(i)
             let filterText = searchInput.value.toLowerCase()
             if (!elementList.includes(filterText)) {
-                console.log(`nao tem ${i}`)
+                element.parentElement.style.display = 'none'
             } else {
-                console.log(`contem ${i}`)
+                element.parentElement.style.display = 'flex'
             }
         })
-    } else {
-
+        return
     }
 }
 
